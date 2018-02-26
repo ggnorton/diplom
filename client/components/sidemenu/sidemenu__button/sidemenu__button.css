@@ -1,0 +1,8 @@
+.side-menu__button{
+    color: #ffffff;
+    border:none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+}
