@@ -5,9 +5,8 @@ class Header extends React.Component{
   render(){
     return(
       <header className="header">
-        <h2 className="header__title_top">EasyManage</h2>
-        <span className="header__title_bottom">sample</span>
-        
+        <div className="logo"></div>
+        <div className="contacts"></div>
       </header>
     );
   }

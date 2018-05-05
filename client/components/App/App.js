@@ -1,6 +1,6 @@
 import React from 'react';
 import './app.css';
-import Sidemenu from "../sidemenu/sidemenu.js";
+import Sidebar from "../Sidebar/Sidebar.js";
 import Header from "../Header/Header";
 
 class App extends React.Component {
@@ -8,7 +8,6 @@ class App extends React.Component {
     return (
      <div className='home-page flex'>
        <Header/>
-       <Sidemenu/>
       </div>
     );
   }

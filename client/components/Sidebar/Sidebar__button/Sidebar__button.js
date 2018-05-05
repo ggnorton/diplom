@@ -1,7 +1,7 @@
 import React from 'react';
-import './sidemenu__button.css';
+import './sidebar__button.css';
 
-class Sidemenu__button extends React.Component{
+class Sidebar__button extends React.Component{
   render(){
     return(
       <a className="side-menu__button">{this.props.children}</a>
@@ -9,4 +9,4 @@ class Sidemenu__button extends React.Component{
   }
 }
 
-export default Sidemenu__button;
+export default Sidebar__button;
