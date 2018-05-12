@@ -1,16 +1,15 @@
 import React from 'react';
 import './app.css';
 import Sidebar from "../Sidebar/Sidebar.js";
-import Header from "../Header/Header";
+import Wrapper from "../Wrapper/Wrapper";
 
-class App extends React.Component {
-  render() {
+export default class App extends React.Component {
+  render () {
     return (
      <div className='home-page flex'>
-       <Header/>
-      </div>
+       <Sidebar/>
+       <Wrapper/>
+     </div>
     );
   }
 }
-
-export default App;
