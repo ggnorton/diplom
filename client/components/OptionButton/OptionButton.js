@@ -4,14 +4,12 @@ import './optionButton.css';
 export default class OptionButton extends Component {
     render () {
         return (
-            <div className="option-button">
-                <button className="option-button__text" onClick={this.props.onClick}>{this.props.text}</button>
-            </div>
+            <span className="option-button" onClick={this.props.onClick}>{this.props.text}</span>
         )
     }
 }
 
 /*OptionButton.PropTypes = {
-    onClick: PtopTypes.func.isRequired,
+    onClick: PropTypes.func.isRequired,
     text: PropTypes.string.isRequired
 }*/

@@ -6,7 +6,7 @@ import Wrapper from "../Wrapper/Wrapper";
 export default class App extends React.Component {
   render () {
     return (
-     <div className='home-page flex'>
+     <div>
        <Sidebar/>
        <Wrapper/>
      </div>

@@ -9,6 +9,7 @@
     border-right: 1px solid #d5d2d0;
     float:left;
     transition: transform 0.5s;
+    padding: 30px 15px;
 }
 .sidebar_opened{
     transform: translateX(0%);

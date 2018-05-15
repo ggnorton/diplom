@@ -1,8 +1,8 @@
 import React from 'react';
 import './section.css';
 
-class Section extends React.Component{
-  render(){
+export default class Section extends React.Component{
+  render (){
     return(
       <div className="section">
       
@@ -10,5 +10,3 @@ class Section extends React.Component{
     );
   }
 }
-
-export default Section;

@@ -1,0 +1,17 @@
+.option_string{
+    margin-bottom: 5px;
+}
+.option_string__text{
+    font-size: 18px;
+}
+.option_string__field{
+    width: 60px;
+    border-radius: 4px;
+    border: 1px solid #666666;
+    margin:0 4px;
+    padding: 2px 4px;
+    font-size: 16px;
+}
+.option_string__field:focus{
+    outline: none;
+}
