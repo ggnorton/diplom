@@ -9,17 +9,17 @@ export default class OptionListInitial extends Component{
   }
   
   setContentAddSection() {
-    this.props.onChangeContent('add section')
+    window.cmsStore.onChangeState('addSection')
   }
   setContentChangeSection(){
-    this.props.onChangeContent('change section')
+    window.cmsStore.onChangeState('changeSection')
   }
   
   render (){
     return (
       <div className="option-list">
-        <OptionButton text={"Добавить секцию"} onChangeContent={this.setContentAddSection.bind(this)}/>
-        <OptionButton text={"Изменить секцию"} onChangeContent={this.setContentChangeSection(this)}/>
+        <OptionButton text={"Добавить секцию"} onClick={this.setContentAddSection.bind('this')}/>
+        <OptionButton text={"Изменить секцию"} onClick={this.setContentChangeSection.bind('this')}/>
         <OptionButton text={"Удалить секцию"}/>
         <OptionButton text={"Выйти"}/>
       </div>

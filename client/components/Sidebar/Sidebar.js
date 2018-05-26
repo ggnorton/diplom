@@ -3,15 +3,25 @@ import './sidebar.css';
 import OptionListInitial from "../OptionLists/OptionListInitial/OptionListInitial";
 import SidebarToggler from "../SidebarToggler/SidebarToggler";
 import OptionListCreateSection from "../OptionLists/OptionListCreateSection/OptionListCreateSection";
+import OptionListChangeSection from "../OptionLists/OptionListChangeSection/OptionListChangeSection";
 
 
 export default class Sidebar extends React.Component{
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     content: "initial"
-  //   }
-  // }
+constructor(props) {
+  super(props)
+  this.state = {
+    content: "initial"
+  }
+
+  function onChangeContent(state) {
+    this.setState({'content': state});
+  }
+
+  window.cmsStore = {
+    sidebarState: "initial",
+    onChangeState: onChangeContent.bind(this)
+  }
+}
   
   // onChangeContent(content) {
   //     this.setState({content: content})
@@ -39,15 +49,28 @@ export default class Sidebar extends React.Component{
   
   render (){
     
-    //return this.getContent.bind(this)
-    return(
-      <aside className="sidebar">
-        {
-          //this.state.content === 'add section' ?
+    if (this.state.content === 'initial') {
+      return(
+        <aside className="sidebar">
+          <OptionListInitial/>
+          <SidebarToggler/>
+        </aside>
+      );
+    } else if (this.state.content === 'addSection') {
+      return(
+        <aside className="sidebar">
           <OptionListCreateSection/>
-        }
-        <SidebarToggler/>
-      </aside>
-    );
+          <SidebarToggler/>
+        </aside>
+      );
+    } else if (this.state.content === 'changeSection') {
+      return(
+        <aside className="sidebar">
+          <OptionListChangeSection/>
+          <SidebarToggler/>
+        </aside>
+      );
+    }
+    
   }
 }
