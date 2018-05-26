@@ -26,5 +26,9 @@ module.exports = {
         })}
     ],
   },
-  plugins: [HtmlWebpackPluginConfig, new ExtractTextPlugin('style.css')]
+  plugins: [HtmlWebpackPluginConfig, new ExtractTextPlugin('style.css')],
+  devServer: {
+      historyApiFallback: true
+  },
+  
 }
