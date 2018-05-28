@@ -44,7 +44,7 @@ export default class Sidebar extends React.Component{
       <aside className="sidebar">
         {
           //this.state.content === 'add section' ?
-          <OptionListCreateSection/>
+          <OptionListInitial/>
         }
         <SidebarToggler/>
       </aside>

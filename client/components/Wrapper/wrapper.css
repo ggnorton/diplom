@@ -1,3 +1,6 @@
 .wrapper{
     transition: padding-left 0.5s;
 }
+.sidebar_toggled{
+    padding-left: 250px;
+}
