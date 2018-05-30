@@ -20,6 +20,7 @@ export default class Sidebar extends React.Component {
           <Route path="/addSection" component={OptionListCreateSection}/>
           <Route path="/changeSection" component={OptionListChangeSection}/>
         </Switch>
+      </aside>
     )    
   }
 }
