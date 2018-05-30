@@ -7,24 +7,25 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import  reducer  from './../reducers/reducer.js'
 
-class Main extends React.Component {
-	render() {
-		return (
-			<div>
-				<Sidebar/>
-				<Wrapper />
-			</div>
-		)
-	}
-}
+
+const store = createStore(reducer)
+
 
 export default class App extends React.Component {
   render () {
     return (
-    <BrowserRouter>
-       <Main />
-     </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <div>
+          <Sidebar/>
+          <Wrapper />
+        </div>
+       </BrowserRouter>
+     </Provider>
     );
   }
 }

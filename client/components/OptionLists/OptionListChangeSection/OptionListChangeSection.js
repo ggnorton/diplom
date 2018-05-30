@@ -8,7 +8,7 @@ export default class OptionListChangeSection extends Component{
   render (){
     return(
       <div className="option-list">
-        <Link to=''><OptionButton text={"Назад"} /></Link>
+        <Link to='/'><OptionButton text={"Назад"} /></Link>
         <button className={"create-submit"}>Выбрать секцию</button>
         <OptionString text={"Ширина секции"} value={"100"} maxLenght={3} property={"%"} />
         <OptionString text={"Высота секции"} value={"25"} maxLenght={3} property={"%"} />
