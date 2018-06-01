@@ -8,10 +8,11 @@ export default class OptionListCreateSection extends Component{
   render (){
     return (
       <div className="option-list">
-        <OptionString text={"Ширина секции"} value={"100"} maxLenght={3} property={"%"} />
-        <OptionString text={"Высота секции"} value={"25"} maxLenght={3} property={"%"} />
-        <OptionString text={"Количество подсекций"} value={"1"} maxLenght={3} property={""} />
-        <button className={"create-submit"}>Создать секцию</button>
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
         <Link to='' className={"option-button_back"}><OptionButton text={"Назад"}/></Link>
       </div>
     )

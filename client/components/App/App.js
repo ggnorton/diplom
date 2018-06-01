@@ -22,7 +22,7 @@ export default class App extends React.Component {
       <BrowserRouter>
         <div>
           <Sidebar/>
-          <Wrapper />
+          <Wrapper/>
         </div>
        </BrowserRouter>
      </Provider>

@@ -4,6 +4,7 @@ import OptionListInitial from "../OptionLists/OptionListInitial/OptionListInitia
 import SidebarToggler from "../SidebarToggler/SidebarToggler";
 import OptionListCreateSection from "../OptionLists/OptionListCreateSection/OptionListCreateSection";
 import OptionListChangeSection from "../OptionLists/OptionListChangeSection/OptionListChangeSection";
+import OptionListDeleteSection from "../OptionLists/OptionListDeleteSection/OptionListDeleteSection"
 
 import {
   Route,
@@ -19,6 +20,7 @@ export default class Sidebar extends React.Component {
           <Route exact path="/" component={OptionListInitial} />
           <Route path="/addSection" component={OptionListCreateSection}/>
           <Route path="/changeSection" component={OptionListChangeSection}/>
+          <Route path="/deleteSection" component={OptionListDeleteSection}/>
         </Switch>
         <SidebarToggler/>
       </aside>
