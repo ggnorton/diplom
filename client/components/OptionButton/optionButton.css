@@ -1,10 +1,16 @@
+.option-button_back{
+    border: 1px solid red;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 16px;
+}
+.option-button_back:active{
+    background-color: rgba(255,0,0,0.1);
+}
 .option-button{
     font-size: 24px;
     border: none;
     background-color: transparent;
     cursor: pointer;
-    color: #333333;
-}
-.option-button:hover{
-    color: darkblue;
+    color:#333333;
 }
