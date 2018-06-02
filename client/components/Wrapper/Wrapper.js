@@ -1,15 +1,43 @@
 import React from 'react';
 import './wrapper.css';
 import Header from "../Header/Header";
+import { connect } from 'react-redux'
+import Subsection from '../Subsection/Subsection.js'
+
+const Section = (props) => {
+	return (
+		<div className="section">
+			{props.subSections.map(subSection => {
+				return <Subsection  id={subSection.subSectionId} 
+									sectionId={subSection.sectionId} 
+									key={subSection.subSectionId}/>
+			})}
+		</div>
+	)
+}
 
 class Wrapper extends React.Component{
-    render(){
+    render() {
         return(
             <div className="wrapper">
-                <Header/>
+                {
+                	this.props.sections.map(section => <Section id={section.id} 
+                												width={section.width}
+                												height={section.height}
+                												subSectionsCount={section.subSectionsCount} 
+                												subSections={section.subSections}
+                												key={section.id} />)
+            	}
             </div>
         )
     }
 }
 
-export default Wrapper;
+const mapStateToProps = state => ({
+	sections: state
+})
+
+export default connect(
+	mapStateToProps,
+	null
+)(Wrapper)

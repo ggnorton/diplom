@@ -2,19 +2,19 @@ import React, {Component} from 'react';
 import './optionString.css';
 
 export default class OptionString extends Component{
-  
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      startValue: this.props.value
+      value: this.props.value
     }
   }
-  
+
   onChangeValue(e) {
-    this.setState({startValue: e.target.value})
+    this.setState({value: e.target.value})
+    this.props.onChangeValue && this.props.onChangeValue(e)
   }
-  
-  render (){
+
+  render () {
     return (
       <div className="option_string">
         <span className="option_string__text">{this.props.text+":"}</span><br/>
