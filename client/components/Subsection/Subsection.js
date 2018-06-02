@@ -5,7 +5,8 @@ class Subsection extends React.Component{
   render(){
     return(
       <div className="subsection">
-      
+      	{this.props.id} <br />
+      	{this.props.sectionId}
       </div>
     );
   }
