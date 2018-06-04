@@ -9,7 +9,9 @@ const reducer = function(state = [], action) {
 			for (let i = 0; i < action.subSectionsCount; i++) {
 				subSections.push({
 					sectionId: lastId,
-					subSectionId: i
+					subSectionId: i,
+					'background-color': 'white',
+					'text': ""
 				})
 			}
 
