@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {deleteSection} from '../../../actions/actions.js'
+import {changeSubSection} from '../../../actions/actions.js'
 import { connect } from 'react-redux'
 import OptionString from "../../../OptionString/OptionString";
 
@@ -27,14 +27,92 @@ class ChangePickSection extends Component{
     console.log(this.state.section.subSections[subSectionIndex])
   }
 
+  onChangeSubSection(e) {
+    let data = {
+      sectionId: this.state.section.sectionId,
+      subSectionId: this.state.selectedSubSectionId,
+      'background-color': this.state.selectedSubSection['background-color']
+    }
+    this.props.changeSubSection(data)
+  }
+
+  onChangeColor(e) {
+    let selSubSec = this.state.selectedSubSection
+    selSubSec['background-color'] = e.target.value
+    this.setState({
+      selectedSubSection: selSubSec
+    })
+  }
+
+  onChangeText(e) {
+    let selSubSec = this.state.selectedSubSection
+    selSubSec['text'] = e.target.value
+    this.setState({
+      selectedSubSection: selSubSec
+    })
+  }
+
+  onChangeTextColor(e) {
+    let selSubSec = this.state.selectedSubSection
+    selSubSec['color'] = e.target.value
+    this.setState({
+      selectedSubSection: selSubSec
+    })
+  }
+
+  onChangePadding(e) {
+    let selSubSec = this.state.selectedSubSection
+    selSubSec['padding'] = e.target.value
+    this.setState({
+      selectedSubSection: selSubSec
+    })
+  }
+
+  onChangeBorder(e) {
+    let selSubSec = this.state.selectedSubSection
+    selSubSec['border'] = e.target.value
+    this.setState({
+      selectedSubSection: selSubSec
+    })
+  }
+
+  onChangeBorderR(e) {
+    let selSubSec = this.state.selectedSubSection
+    selSubSec['color'] = e.target.value
+    this.setState({
+      selectedSubSection: selSubSec
+    })
+  }
+
   initSubSectionInfo() {
-    debugger
     if (this.state.selectedSubSection) {
       return (
         <div>          
-          <OptionString text={"Цвет фона"} value={this.state.selectedSubSection['background-color']} maxLenght={3} />
-          <OptionString text={"Текст"} value={this.state.selectedSubSection.text} maxLenght={3} />
-          <OptionButton text={"изменить подсекцию"}/>
+          <OptionString text={"Цвет фона"} 
+                        value={this.state.selectedSubSection['background-color']} 
+                        maxLenght={3} 
+                        onChangeValue={this.onChangeColor.bind(this)}/>
+          <OptionString text={"Текст"} 
+                        value={this.state.selectedSubSection.text} 
+                        maxLenght={3} 
+                        onChangeValue={this.onChangeText.bind(this)}/>
+          <OptionString text={"Цвет текста"} 
+                        value={this.state.selectedSubSection.color} 
+                        maxLenght={3} 
+                        onChangeValue={this.onChangeTextColor.bind(this)}/>
+          <OptionString text={"Отступы"} 
+                        value={this.state.selectedSubSection.padding} 
+                        maxLenght={3} 
+                        onChangeValue={this.onChangePadding.bind(this)}/>
+          <OptionString text={"Рамка"} 
+                        value={this.state.selectedSubSection.border} 
+                        maxLenght={3} 
+                        onChangeValue={this.onChangeBorder.bind(this)}/>
+          <OptionString text={"Скругления рамки"} 
+                        value={this.state.selectedSubSection['border-radius']} 
+                        maxLenght={3} 
+                        onChangeValue={this.onChangeBorderR.bind(this)}/>
+          <OptionButton text={"изменить подсекцию"} onClick={this.onChangeSubSection.bind(this)}/>
         </div>
       )
     } else {
@@ -65,7 +143,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  deleteSection: sectionId => dispatch(deleteSection(sectionId))
+  changeSubSection: (params) => dispatch(changeSubSection(params))
 })
 
 export default connect(

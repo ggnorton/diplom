@@ -4,10 +4,16 @@ import './subsection.css';
 class Subsection extends React.Component{
   render(){
   	debugger
+  	let style = {
+  		backgroundColor: this.props.params['background-color'],
+      color: this.props.params['color'],
+      padding: this.props.params['padding'],
+      border: this.props.params['border'],
+      borderRadius: this.props.params['borderRadius']
+  	}
     return(
-      <div className="subsection">
-      	{this.props.id} <br />
-      	{this.props.sectionId}
+      <div className="subsection" style={style}>
+      	{this.props.params.text}
       </div>
     );
   }

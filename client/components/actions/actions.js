@@ -16,3 +16,17 @@ export const deleteSection = sectionId => ({
 	type: 'DELETE_SECTION',
 	sectionId: sectionId
 })
+
+export const changeSection = (params) => ({
+	type: 'CHANGE_SECTION',
+	sectionId: params.sectionId,
+	height: params.height,
+	width: params.width
+})
+
+export const changeSubSection = (params) => ({
+	type: 'CHANGE_SUB_SECTION',
+	sectionId: params.sectionId,
+	subSectionId: params.subSectionId,
+	params: params
+})

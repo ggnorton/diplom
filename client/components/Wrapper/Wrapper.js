@@ -14,7 +14,8 @@ const Section = (props) => {
 			{props.subSections.map(subSection => {
 				return <Subsection  id={subSection.subSectionId} 
 									sectionId={subSection.sectionId} 
-									key={subSection.subSectionId}/>
+									key={subSection.subSectionId}
+                                    params={subSection}/>
 			})}
 		</div>
 	)

@@ -11,7 +11,11 @@ const reducer = function(state = [], action) {
 					sectionId: lastId,
 					subSectionId: i,
 					'background-color': 'white',
-					'text': ""
+					'text': lastId + " " + i,
+					'color': 'black',
+					'padding': '0 0',
+					'border': 'none',
+					'border-radius': '0px'
 				})
 			}
 
@@ -34,8 +38,34 @@ const reducer = function(state = [], action) {
 			})
 			if (deletingSectionIndex != -1)
 				newState1.splice(deletingSectionIndex, 1)
-			debugger
 			return newState1
+		case 'CHANGE_SUB_SECTION':
+			let newState2 = state.slice()
+			let changingSectionIndex = -1
+			newState2.forEach((item, index) => {
+				if (item.sectionId == action.sectionId) 
+					changingSectionIndex = index 
+			})
+			let changingSubSectionIndex = -1
+			newState2[changingSectionIndex].subSections.forEach((item, index) => {
+				if (item.subSectionId == action.subSectionId) 
+					changingSubSectionIndex = index 
+			})
+			let cssec = newState2[changingSectionIndex].subSections[changingSubSectionIndex]
+			cssec['background-color'] = action.params['background-color'] || cssec['background-color']
+			newState2[changingSectionIndex].subSections.splice(changingSubSectionIndex, 1, cssec)
+			return newState2
+
+		case 'CHANGE_SECTION':
+			let newState3 = state.slice()
+			let changingSectionIndex1 = -1
+			newState3.forEach((item, index) => {
+				if (item.sectionId == action.sectionId) 
+					changingSectionIndex1 = index 
+			})
+			newState3[changingSectionIndex1].height = action.height
+			newState3[changingSectionIndex1].width = action.width
+			return newState3
 		default:
       		return state
 	}
