@@ -66,6 +66,11 @@ const reducer = function(state = [], action) {
 			newState3[changingSectionIndex1].height = action.height
 			newState3[changingSectionIndex1].width = action.width
 			return newState3
+		case 'LOAD_STORE':
+			debugger
+			return localStorage ['serverless_crm']  && 
+					typeof JSON.parse(localStorage['serverless_crm']) === 'object' ?
+					JSON.parse(localStorage['serverless_crm']) : store
 		default:
       		return state
 	}
