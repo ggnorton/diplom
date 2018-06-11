@@ -3,6 +3,7 @@ import './subsection.css';
 
 class Subsection extends React.Component{
   render(){
+  	debugger
     return(
       <div className="subsection">
       	{this.props.id} <br />

@@ -5,8 +5,12 @@ import { connect } from 'react-redux'
 import Subsection from '../Subsection/Subsection.js'
 
 const Section = (props) => {
+    let style = {
+        height: `${props.height}vh`,
+        width: `${props.width}%`,
+    }
 	return (
-		<div className="section">
+		<div className="section" style={style}>
 			{props.subSections.map(subSection => {
 				return <Subsection  id={subSection.subSectionId} 
 									sectionId={subSection.sectionId} 
