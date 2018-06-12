@@ -30,3 +30,7 @@ export const changeSubSection = (params) => ({
 	subSectionId: params.subSectionId,
 	params: params
 })
+
+export const loadStore = () => ({
+  type: 'LOAD_STORE'
+})

@@ -9,7 +9,7 @@ class Subsection extends React.Component{
       color: this.props.params['color'],
       padding: this.props.params['padding'],
       border: this.props.params['border'],
-      borderRadius: this.props.params['borderRadius']
+      borderRadius: this.props.params['border-radius']
   	}
     return(
       <div className="subsection" style={style}>

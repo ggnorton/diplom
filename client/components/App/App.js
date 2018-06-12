@@ -11,7 +11,6 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import  reducer  from './../reducers/reducer.js'
 
-
 const store = createStore(reducer)
 
 
@@ -19,12 +18,12 @@ export default class App extends React.Component {
   render () {
     return (
     <Provider store={store}>
-      <BrowserRouter>
-        <div>
-          <Sidebar/>
-          <Wrapper/>
-        </div>
-       </BrowserRouter>
+        <BrowserRouter>
+          <div>
+            <Sidebar/>
+            <Wrapper/>
+          </div>
+        </BrowserRouter>
      </Provider>
     );
   }
