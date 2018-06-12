@@ -13,6 +13,14 @@ import  reducer  from './../reducers/reducer.js'
 
 const store = createStore(reducer)
 
+debugger
+
+const options = {
+  position: 'bottom right',
+  timeout: 3000,
+  offset: '30px',
+  transition: 'scale'
+}
 
 export default class App extends React.Component {
   render () {
@@ -22,7 +30,7 @@ export default class App extends React.Component {
           <div>
             <Sidebar/>
             <Wrapper/>
-          </div>
+         </div>
         </BrowserRouter>
      </Provider>
     );

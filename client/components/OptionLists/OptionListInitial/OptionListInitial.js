@@ -18,14 +18,13 @@ class OptionListInitial extends Component{
     this.props.loadStore()
     alert('модель crm загружена')
   }
-  
   render (){
     return (
       <div className="option-list">
         <Link to="/addSection"><OptionButton text={"Добавить секцию"}/></Link>
         <Link to="/changeSection"><OptionButton text={"Изменить секцию"}/></Link>
         <Link to="/deleteSection"><OptionButton text={"Удалить секцию"}/></Link>
-  
+      
         <OptionButton onClick={this.onSave.bind(this)} text={"Сохранить"}/>
         <OptionButton onClick={this.onLoad.bind(this)} text={"Загрузить"}/>
       </div>
